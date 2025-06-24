@@ -1,5 +1,7 @@
 import Link from "next/link"
+import React from "react";
 import { ArrowLeft } from "lucide-react"
+
 
 export default function AboutPage() {
   return (
@@ -7,17 +9,17 @@ export default function AboutPage() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 p-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-white hover:text-green-400 transition-colors">
+          <Link href="/" className="text-white hover:text-smolae-green-light transition-colors">
             ← Accueil
           </Link>
           <div className="flex gap-6">
-            <Link href="/about" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/about" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               À propos
             </Link>
-            <Link href="/projects" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/projects" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               Projets
             </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/contact" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               Contact
             </Link>
           </div>
@@ -43,15 +45,15 @@ export default function AboutPage() {
           {/* Skills or additional info could go here */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-green-700">Développement</h3>
+              <h3 className="text-xl font-semibold mb-3 text-smolae-green-dark">Développement</h3>
               <p className="text-sm text-gray-400">React, Node.js, Next.js, TypeScript, Php</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-green-700">Design</h3>
+              <h3 className="text-xl font-semibold mb-3 text-smolae-green-dark">Design</h3>
               <p className="text-sm text-gray-400">UI/UX, Tailwind CSS, Responsive Design</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-green-700">Outils</h3>
+              <h3 className="text-xl font-semibold mb-3 text-smolae-green-dark">Outils</h3>
               <p className="text-sm text-gray-400">Git, Figma, Canva, Adobe Suite</p>
             </div>
           </div>

@@ -3,13 +3,73 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Vos couleurs personnalisées pour le portfolio */
+  --smolae-green: #3e9e42;
+  --smolae-green-light: #9af1b4;
+  --smolae-green-dark: #2a4d03;
+  --smolae-dark: #0a0a0a;
+  --smolae-gray: #1f2937;
+  --smolae-gray-light: #374151;
+  --smolae-light: #f6f2f7;
 }
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Ajout de vos couleurs personnalisées */
+  --color-smolae-green: var(--smolae-green);
+  --color-smolae-green-light: var(--smolae-green-light);
+  --color-smolae-green-dark: var(--smolae-green-dark);
+  --color-smolae-dark: var(--smolae-dark);
+  --color-smolae-gray: var(--smolae-gray);
+  --color-smolae-gray-light: var(--smolae-gray-light);
+  --color-smolae-light: var(--smolae-light);
+
+  /* Palette portfolio complète */
+  --color-portfolio-green-50: #f0fdf4;
+  --color-portfolio-green-100: #dcfce7;
+  --color-portfolio-green-200: #bbf7d0;
+  --color-portfolio-green-300: #86efac;
+  --color-portfolio-green-400: #4ade80;
+  --color-portfolio-green-500: #22c55e;
+  --color-portfolio-green-600: #16a34a;
+  --color-portfolio-green-700: #15803d;
+  --color-portfolio-green-800: #166534;
+  --color-portfolio-green-900: #14532d;
+
+  /* Couleurs sombres pour votre thème */
+  --color-portfolio-dark-50: #f8fafc;
+  --color-portfolio-dark-100: #f1f5f9;
+  --color-portfolio-dark-200: #e2e8f0;
+  --color-portfolio-dark-300: #cbd5e1;
+  --color-portfolio-dark-400: #94a3b8;
+  --color-portfolio-dark-500: #64748b;
+  --color-portfolio-dark-600: #475569;
+  --color-portfolio-dark-700: #334155;
+  --color-portfolio-dark-800: #1e293b;
+  --color-portfolio-dark-900: #0f172a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +83,68 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animations personnalisées */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes utilitaires personnalisées */
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .nav-link {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--smolae-green);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .btn-hover {
+    transition: all 0.3s ease;
+  }
+
+  .btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  }
 }

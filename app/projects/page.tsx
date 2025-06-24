@@ -50,19 +50,19 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 p-6 bg-black/80 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 p-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-white hover:text-green-400 transition-colors">
+          <Link href="/" className="text-white hover:text-smolae-green-light transition-colors">
             ← Accueil
           </Link>
           <div className="flex gap-6">
-            <Link href="/about" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/about" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               À propos
             </Link>
-            <Link href="/projects" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/projects" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               Projets
             </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/contact" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               Contact
             </Link>
           </div>
@@ -72,7 +72,10 @@ export default function ProjectsPage() {
       {/* Contenu principal */}
       <div className="pt-24 px-8 max-w-6xl mx-auto">
         {/* Trait horizontal décoratif */}
-        <div className="h-px w-32 bg-gradient-to-r from-transparent via-white to-transparent opacity-70 mb-8"></div>
+        {/* Visible uniquement à partir des grands écrans (lg et +) */}
+        <div className="hidden lg:block absolute top-25 right-20 transform -translate-x-1/2 -translate-y-1/2 w-22 h-px bg-green-100 opacity-70 z-20"></div>
+        <div className="hidden lg:block absolute w-px h-22 top-25 right-31 bg-green-100 opacity-70 "></div>
+
 
         <h1 className="text-5xl font-bold mb-12">MES PROJETS</h1>
 
@@ -99,6 +102,7 @@ export default function ProjectsPage() {
               </div>
             </div>
           ))}
+          
         </div>
       </div>
     </div>

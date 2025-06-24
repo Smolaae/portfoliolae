@@ -1,23 +1,25 @@
 import Link from "next/link"
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react"
 
+
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 p-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-white hover:text-green-400 transition-colors">
+          <Link href="/" className="text-white hover:text-smolae-green-light transition-colors">
             ← Accueil
           </Link>
           <div className="flex gap-6">
-            <Link href="/about" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/about" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               À propos
             </Link>
-            <Link href="/projects" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/projects" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               Projets
             </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link href="/contact" className="text-gray-400 hover:text-smolae-green-light transition-colors">
               Contact
             </Link>
           </div>
@@ -27,7 +29,7 @@ export default function ContactPage() {
       {/* Contenu principal */}
       <div className="pt-24 px-8 max-w-4xl mx-auto">
         {/* Trait horizontal décoratif */}
-        <div className="h-px w-32 bg-gradient-to-r from-transparent via-white to-transparent opacity-70 mb-8"></div>
+        <div className="h-px w-32 bg-gradient-to-r from-transparent via-green-200 to-transparent opacity-70 mb-8"></div>
 
         <h1 className="text-5xl font-bold mb-12">CONTACT</h1>
 
@@ -41,16 +43,13 @@ export default function ContactPage() {
 
             <div className="space-y-4">
               <div className="flex items-center gap-4">
-                <Mail className="w-5 h-5 text-green-400" />
-                <span>contact@smolae.dev</span>
+                <Mail className="w-5 h-5 text-green-200" />
+                <span>laedev@icloud.com</span>
               </div>
+              
               <div className="flex items-center gap-4">
-                <Phone className="w-5 h-5 text-green-400" />
-                <span>+33 6 12 34 56 78</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <MapPin className="w-5 h-5 text-green-400" />
-                <span>France</span>
+                <MapPin className="w-5 h-5 text-green-200" />
+                <span>France, Paris</span>
               </div>
             </div>
 
@@ -100,7 +99,7 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-green-600 hover:bg-green-700 rounded-lg font-medium transition-colors"
+                className="w-full py-3 bg-green-500 hover:bg-green-700 rounded-lg font-medium transition-colors"
               >
                 Envoyer le message
               </button>
