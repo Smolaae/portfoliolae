@@ -3,34 +3,15 @@ import React from "react";
 import { ArrowLeft } from "lucide-react"
 
 
-export default function AboutPage() {
+export default function About() {
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 p-6">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="text-white hover:text-smolae-green-light transition-colors">
-            ← Accueil
-          </Link>
-          <div className="flex gap-6">
-            <Link href="/about" className="text-gray-400 hover:text-smolae-green-light transition-colors">
-              À propos
-            </Link>
-            <Link href="/projects" className="text-gray-400 hover:text-smolae-green-light transition-colors">
-              Projets
-            </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-smolae-green-light transition-colors">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
+      
 
       {/* Main Content */}
       <div className="flex min-h-screen items-center justify-center px-8">
         <div className="max-w-4xl">
           
-
           <h1 className="text-4xl font-bold mb-12 ">À PROPOS</h1>
 
           <div className="space-y-6 text-gray-300 leading-relaxed">

@@ -8,8 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openFolder, setOpenFolder] = useState<string | null>(null);
-
+  
   return (
     <section className="relative h-screen  flex items-center justify-center">
 
@@ -103,19 +102,7 @@ const Hero = () => {
         {/* trait au dessus de smolae */}
         <div className="absolute top-25 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-px bg-green-100 opacity-70 z-20"></div>
        
-       {/* // Folder section bottom right */}
-<div className="absolute bottom-6 right-6 z-30 flex gap-4">
-  {['À propos', 'Projets', 'Contact'].map((folder) => (
-    <button
-      key={folder}
-      onClick={() => setOpenFolder(folder)}
-      className="text-center p-2 bg-yellow-100 hover:bg-yellow-200 rounded-md shadow-md transition"
-    >
-      <div className="text-4xl">📁</div>
-      <p className="text-xs text-black">{folder}</p>
-    </button>
-  ))}
-</div>
+       
 
       {/* Contenu principal */}
       <div className="relative z-20 text-center text-white">
@@ -131,28 +118,7 @@ const Hero = () => {
                 <p className="text-xl text-white font-light tracking-widest">2025</p>
             </div>
         </div>
-        {openFolder && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn">
-          <div className="bg-white p-6 rounded-lg w-[90%] max-w-md shadow-lg">
-            <h2 className="text-xl font-bold mb-4">{openFolder}</h2>
-            <p className="text-gray-700">
-              Contenu de la section <strong>{openFolder}</strong> (tu peux mettre du texte, une image, ou un lien ici).
-            </p>
-            <button
-              onClick={() => setOpenFolder(null)}
-              className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-            >
-              Fermer
-            </button>
-          </div>
-      </div>
-  )}
-
     </section>
-    
-
-
-
   )
 }
 
