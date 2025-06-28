@@ -30,56 +30,12 @@ const Hero = () => {
             />
             <span className="text-white font-bold text-xl"></span>
           </div>
-          
-          {/* Menu desktop */}
-          <div className="hidden md:flex gap-6">
-            <Link href="/" className="text-white hover:text-green-400 transition-colors">
-              Accueil
-            </Link>
-            <Link href="/about" className="text-white hover:text-green-400 transition-colors">
-              À propos
-            </Link>
-            <Link href="/projects" className="text-white hover:text-green-400 transition-colors">
-              Projets
-            </Link>
-            <Link href="/contact" className="text-white hover:text-green-400 transition-colors">
-              Contact
-            </Link>
-          </div>
-
-          {/* Menu mobile */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-
-        {/* Menu mobile dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-sm p-6">
-            <div className="flex flex-col gap-4">
-              <Link href="/" className="text-white hover:text-smolae-gray-light transition-colors">
-                Accueil
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-                À propos
-              </Link>
-              <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
-                Projets
-              </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
       </nav>
 
     
         {/* image */}
-        <div className="absolute bottom-1 left-50 z-10">
+        <div className="hidden lg:block absolute bottom-1 left-50 z-10">
         <Image
           src="/nature.jpg"
           alt="Logo"
@@ -89,7 +45,7 @@ const Hero = () => {
         />
       </div>
       {/* image */}
-        <div className="absolute top-1 left-70 z-10">
+        <div className="hidden lg:block absolute top-1 left-70 z-10">
         <Image
           src="/girl.jpg"
           alt="Logo"
@@ -100,15 +56,14 @@ const Hero = () => {
     </div>
 
         {/* trait au dessus de smolae */}
-        <div className="absolute top-25 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-px bg-green-100 opacity-70 z-20"></div>
-       
-       
+        <div className="hidden lg:block absolute top-25 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-px bg-green-100 opacity-70 z-20"></div>
+
 
       {/* Contenu principal */}
       <div className="relative z-20 text-center text-white">
         
-        <h1 className="text-6xl font-bold mb-4">SMOLAE</h1>
-        <h2 className="text-4xl font-light">PORTFOLIO</h2>
+        <h1 className="lg:text-6xl md:text-4xl sm:text-4xl font-bold mb-4">SMOLAE</h1>
+        <h2 className="lg:text-4xl md:text-4xl sm:text-4xl font-light">PORTFOLIO</h2>
       </div>
 
       {/* Année */}

@@ -37,10 +37,10 @@ export default function Contact() {
 
             {/* Réseaux sociaux */}
             <div className="flex gap-4 mt-8">
-              <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors">
+              <a href="https://github.com/Smolaae" className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors">
+              <a href="https://www.linkedin.com/in/laetitiadoss/" className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -79,9 +79,9 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:border-green-400 focus:outline-none resize-none"
                 ></textarea>
               </div>
-              <button
+              <button 
                 type="submit"
-                className="w-full py-3 bg-green-500 hover:bg-green-700 rounded-lg font-medium transition-colors"
+                className="w-full py-3 bg-smolae-green hover:bg-smolae-green-dark rounded-lg font-medium transition-colors"
               >
                 Envoyer le message
               </button>

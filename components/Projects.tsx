@@ -19,7 +19,7 @@ export default function Projects() {
       description: "Site de partage de ressources pour apprendre le Lua",
       tech: ["HTML", "Tailwind", "JavaScript"],
       image: "/learninglua.png?height=300&width=400",
-      link : "https://learninglua.fr",
+      link : "https://learn.sayzx.fr/",
     },
     {
       id: 3,
@@ -57,8 +57,7 @@ export default function Projects() {
 
       {/* Contenu principal */}
       <div className="pt-24 px-8 max-w-6xl mx-auto">
-        *$
-        $
+        
         <h1 className="text-5xl font-bold mb-12">MES PROJETS</h1>
 
         {/* Grille de projets */}
