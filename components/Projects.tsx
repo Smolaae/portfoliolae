@@ -1,5 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
+import {
+  FadeInUp,
+  FadeInLeft,
+} from "./ScrollAnimations"
 
 
 
@@ -57,13 +61,14 @@ export default function Projects() {
 
       {/* Contenu principal */}
       <div className="pt-24 px-8 max-w-6xl mx-auto">
-        
-        <h1 className="text-5xl font-bold mb-12">MES PROJETS</h1>
-
+        <FadeInUp>
+          <h1 className="text-5xl font-bold mb-12 leading-relaxed">MES PROJETS</h1>
+        </FadeInUp>
         {/* Grille de projets */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Link href={project.link || "#"} target="_blank" rel="noopener noreferrer" className="no-underline" key={project.id}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <FadeInLeft key={project.id}>
+            <Link href={project.link || "#"} target="_blank" rel="noopener noreferrer" className="no-underline">
               <div
                 className="bg-smolae-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
               >
@@ -83,8 +88,8 @@ export default function Projects() {
                 </div>
               </div>
             </Link>
+          </FadeInLeft>
         ))}
-
       </div>
         </div>
       </div>

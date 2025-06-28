@@ -1,9 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { useState } from "react"
-import { Menu, X } from 'lucide-react'
+import {
+  FadeInUp,
+  TypewriterText,
+ 
+} from "./ScrollAnimations"
 
 
 const Hero = () => {
@@ -61,9 +64,12 @@ const Hero = () => {
 
       {/* Contenu principal */}
       <div className="relative z-20 text-center text-white">
-        
-        <h1 className="lg:text-6xl md:text-4xl sm:text-4xl font-bold mb-4">SMOLAE</h1>
-        <h2 className="lg:text-4xl md:text-4xl sm:text-4xl font-light">PORTFOLIO</h2>
+        <FadeInUp>
+        <h1 className="lg:text-6xl md:text-4xl sm:text-4xl font-bold mb-4"><TypewriterText text="SMOLAE" delay={0.5} /></h1>
+        </FadeInUp>
+        <FadeInUp delay={0.3}>
+          <h2 className="lg:text-4xl md:text-4xl sm:text-4xl font-light"><TypewriterText text="PORTFOLIO" delay={0.5} /></h2>
+        </FadeInUp>
       </div>
 
       {/* Année */}
