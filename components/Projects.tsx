@@ -57,10 +57,10 @@ export default function Projects() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-emerald-950/30 backdrop-blur-sm text-white">
 
       {/* Contenu principal */}
-      <div className="pt-24 px-8 max-w-6xl mx-auto">
+      <div className="pt-24 px-8 pb-10 max-w-6xl mx-auto">
         <FadeInUp>
           <h1 className="text-5xl font-bold mb-12 leading-relaxed">MES PROJETS</h1>
         </FadeInUp>
@@ -92,6 +92,7 @@ export default function Projects() {
         ))}
       </div>
         </div>
+         <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-stone-950 to-transparent pointer-events-none" />
       </div>
   )
 }

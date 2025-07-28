@@ -13,10 +13,9 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   return (
-    <section className="relative h-screen  flex items-center justify-center">
+    <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-emerald-950/30 to-stone-950/30 ">
 
-      {/* Background Image */}
-      <Image src="/bg.png" alt="Background" fill className="object-cover" priority />
+    
 
       {/* Overlay pour la lisibilité */}
       <div className="absolute inset-0  z-10"></div>
@@ -36,27 +35,7 @@ const Hero = () => {
         </div>
       </nav>
 
-    
-        {/* image */}
-        <div className="hidden lg:block absolute bottom-1 left-50 z-10">
-        <Image
-          src="/nature.jpg"
-          alt="Logo"
-          width={250}
-          height={300}
-          className="rounded-2xl shadow-lg"
-        />
-      </div>
-      {/* image */}
-        <div className="hidden lg:block absolute top-1 left-70 z-10">
-        <Image
-          src="/girl.jpg"
-          alt="Logo"
-          width={250}
-          height={300}
-          className="rounded-2xl shadow-lg"
-        />
-    </div>
+
 
         {/* trait au dessus de smolae */}
         <div className="hidden lg:block absolute top-25 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-px bg-green-100 opacity-70 z-20"></div>
@@ -65,10 +44,10 @@ const Hero = () => {
       {/* Contenu principal */}
       <div className="relative z-20 text-center text-white">
         <FadeInUp>
-        <h1 className="lg:text-6xl md:text-4xl sm:text-4xl font-bold mb-4"><TypewriterText text="SMOLAE" delay={0.5} /></h1>
+        <h1 className="lg:text-6xl md:text-4xl sm:text-4xl font-bold mb-4"><TypewriterText text="SMOLAE" delay={2} /></h1>
         </FadeInUp>
         <FadeInUp delay={0.3}>
-          <h2 className="lg:text-4xl md:text-4xl sm:text-4xl font-light"><TypewriterText text="PORTFOLIO" delay={0.5} /></h2>
+          <h2 className="lg:text-4xl md:text-4xl sm:text-4xl font-light"><TypewriterText text="PORTFOLIO" delay={2} /></h2>
         </FadeInUp>
       </div>
 
@@ -79,6 +58,7 @@ const Hero = () => {
                 <p className="text-xl text-white font-light tracking-widest">2025</p>
             </div>
         </div>
+     
     </section>
   )
 }

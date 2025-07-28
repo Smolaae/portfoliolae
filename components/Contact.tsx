@@ -15,7 +15,7 @@ import {
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black backdrop-blur-sm text-white">
       
 
       {/* Contenu principal */}
@@ -56,11 +56,14 @@ export default function Contact() {
               <a href="https://www.linkedin.com/in/laetitiadoss/" className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              
+              <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-emerald-950/30 to-transparent pointer-events-none" />
+     
             </div>
           </div>
         </div>
+        
       </div>
+      
     </div>
   )
 }

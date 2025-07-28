@@ -8,7 +8,7 @@ import {
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-stone-950 text-white">
       
 
       {/* Main Content */}
