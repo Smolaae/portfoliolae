@@ -5,8 +5,6 @@ import {
   FadeInLeft,
 } from "./ScrollAnimations"
 
-
-
 export default function Projects() {
   const projects = [
     {
@@ -67,53 +65,53 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-emerald-950/30 backdrop-blur-sm text-white">
-
       {/* Contenu principal */}
       <div className="pt-24 px-8 pb-10 max-w-6xl mx-auto">
         <FadeInUp>
           <h1 className="text-5xl font-bold mb-12 leading-relaxed">MES PROJETS</h1>
         </FadeInUp>
-        {/* Grille de projets */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-  <FadeInLeft key={project.id}>
-    <Link
-      href={project.internal ? `/projects/${project.id}` : project.link || "#"}
-      target={project.internal ? "_self" : "_blank"}
-      rel={project.internal ? undefined : "noopener noreferrer"}
-      className="no-underline"
-    >
-      <div className="bg-smolae-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
-        <div className="relative h-48">
-          <Image
-            src={project.images?.[0] || project.image || "/placeholder.svg"}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-          <p className="text-gray-400 mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 bg-smolae-green-dark text-smolae-green-light text-sm rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </Link>
-  </FadeInLeft>
-))}
 
-      </div>
+        {/* Grille de projets */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <FadeInLeft key={project.id}>
+              <Link
+                href={project.internal ? `/projects/${project.id}` : project.link || "#"}
+                target={project.internal ? "_self" : "_blank"}
+                rel={project.internal ? undefined : "noopener noreferrer"}
+                className="no-underline"
+              >
+                <div className="bg-smolae-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="relative h-48">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-smolae-green-dark text-smolae-green-light text-sm rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </FadeInLeft>
+          ))}
         </div>
-         <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-stone-950 to-transparent pointer-events-none" />
       </div>
+
+      <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-stone-950 to-transparent pointer-events-none" />
+    </div>
   )
 }
