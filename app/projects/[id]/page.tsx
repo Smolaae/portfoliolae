@@ -1,9 +1,9 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { FadeInUp } from "@/components/ScrollAnimations";
-import { notFound } from "next/navigation";
 
 const projects = [
   {
@@ -15,7 +15,6 @@ const projects = [
     content:
       "Ce projet est une plateforme de gestion pour un jeu vidéo basé sur FiveM, permettant aux utilisateurs de gérer divers aspects du jeu pour faciliter leur expérience RP.",
   },
-
   {
     id: 2,
     title: "Learning Lua",
@@ -65,12 +64,32 @@ const projects = [
   },
 ];
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = projects.find((p) => p.id === parseInt(params.id));
+interface Params {
+  id: string;
+}
+
+export default function ProjectPage({ params }: { params: Promise<Params> }) {
+  // Déballage de la Promise params avec React.use()
+  const resolvedParams = React.use(params);
+
+  // Debug params
+  console.log("params.id =", resolvedParams.id);
+
+  const id = Number(resolvedParams.id);
+  if (isNaN(id)) {
+    return <div className="min-h-screen flex items-center justify-center text-white bg-stone-900">
+      <p>Paramètre id invalide : {String(resolvedParams.id)}</p>
+    </div>;
+  }
+
+  const project = projects.find((p) => p.id === id);
+  if (!project) {
+    return <div className="min-h-screen flex items-center justify-center text-white bg-stone-900">
+      <p>Projet non trouvé pour l'id : {id}</p>
+    </div>;
+  }
 
   const [isOpen, setIsOpen] = useState(false);
-
-  if (!project) return notFound();
 
   return (
     <div className="min-h-screen px-18 py-10 text-white bg-stone-900">
@@ -81,31 +100,35 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* image */}
         <FadeInUp>
-        <div
-          className="flex-shrink-0 w-[400px] h-[200px] overflow-hidden rounded cursor-zoom-in"
-          onClick={() => setIsOpen(true)}
-          aria-label={`Voir l'image complète de ${project.title}`}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if(e.key === "Enter") setIsOpen(true); }}
-        >
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={400}
-            height={300}
-            className="object-cover"
-            priority
-          />
-        </div>
+          <div
+            className="flex-shrink-0 w-[400px] h-[200px] overflow-hidden rounded cursor-zoom-in"
+            onClick={() => setIsOpen(true)}
+            aria-label={`Voir l'image complète de ${project.title}`}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") setIsOpen(true);
+            }}
+          >
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={400}
+              height={300}
+              className="object-cover"
+              priority
+            />
+          </div>
         </FadeInUp>
         {/* texte */}
         <FadeInUp>
-        <div className="flex flex-col text-center md:text-left">
-          <p className="mb-2 text-xl">{project.description}</p>
-          <p className="mb-2 text-sm text-gray-400">Langages utilisés : {project.tech.join(", ")}</p>
-          <p className="leading-relaxed text-xl">{project.content}</p>
-        </div>
+          <div className="flex flex-col text-center md:text-left">
+            <p className="mb-2 text-xl">{project.description}</p>
+            <p className="mb-2 text-sm text-gray-400">
+              Langages utilisés : {project.tech.join(", ")}
+            </p>
+            <p className="leading-relaxed text-xl">{project.content}</p>
+          </div>
         </FadeInUp>
       </div>
 
@@ -132,8 +155,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             <Image
               src={project.image}
               alt={project.title}
-              width={1000} // largeur "grande" pour afficher l'image en grand
-              height={1500} // hauteur proportionnelle (à ajuster si besoin)
+              width={1000}
+              height={1500}
               className="object-contain max-w-full h-auto"
               priority
             />
