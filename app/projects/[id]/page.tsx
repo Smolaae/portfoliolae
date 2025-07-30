@@ -1,9 +1,8 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
-import { useState } from "react";
-import { FadeInUp } from "@/components/ScrollAnimations";
+"use client"
+import { use } from "react"
+import Image from "next/image"
+import { useState } from "react"
+import { FadeInUp } from "@/components/ScrollAnimations"
 
 const projects = [
   {
@@ -36,8 +35,7 @@ const projects = [
   {
     id: 4,
     title: "Site d'Hébergement",
-    description:
-      "Site vitrine pour une entreprise d'hébergement web et de services numériques",
+    description: "Site vitrine pour une entreprise d'hébergement web et de services numériques",
     tech: ["Tailwind", "Php", "JavaScript", "MySQL"],
     image: "/fullpagehost.png",
     content:
@@ -55,41 +53,46 @@ const projects = [
   {
     id: 6,
     title: "UI inventaire pour FiveM",
-    description:
-      "Interface utilisateur pour un système d'inventaire dans un serveur FiveM",
+    description: "Interface utilisateur pour un système d'inventaire dans un serveur FiveM",
     tech: ["SCSS", "Lua"],
     image: "/inv.png",
     content:
       "Une interface utilisateur développée pour gérer l'inventaire dans un serveur FiveM, offrant une expérience utilisateur fluide et intuitive. Le design à été imaginé pour un serveur sur le theme futuriste avec des ton rouge, rose et bleu. le code est 100% en scss et lua.",
   },
-];
+]
 
-interface Params {
-  id: string;
+interface PageProps {
+  params: Promise<{ id: string }>
 }
 
-export default function ProjectPage({ params }: { params: Promise<Params> }) {
-  // Déballage de la Promise params avec React.use()
-  const resolvedParams = React.use(params);
+export default function ProjectPage({ params }: PageProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  // Utilisation correcte de use() pour déballer la Promise
+  const { id } = use(params)
 
   // Debug params
-  console.log("params.id =", resolvedParams.id);
+  console.log("params.id =", id)
 
-  const id = Number(resolvedParams.id);
-  if (isNaN(id)) {
-    return <div className="min-h-screen flex items-center justify-center text-white bg-stone-900">
-      <p>Paramètre id invalide : {String(resolvedParams.id)}</p>
-    </div>;
+  const projectId = Number(id)
+
+  if (isNaN(projectId)) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-white bg-stone-900">
+        <p>Paramètre id invalide : {String(id)}</p>
+      </div>
+    )
   }
 
-  const project = projects.find((p) => p.id === id);
+  const project = projects.find((p) => p.id === projectId)
+
   if (!project) {
-    return <div className="min-h-screen flex items-center justify-center text-white bg-stone-900">
-      <p>Projet non trouvé pour l'id : {id}</p>
-    </div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-white bg-stone-900">
+        <p>Projet non trouvé pour l'id : {projectId}</p>
+      </div>
+    )
   }
-
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="min-h-screen px-18 py-10 text-white bg-stone-900">
@@ -107,11 +110,11 @@ export default function ProjectPage({ params }: { params: Promise<Params> }) {
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
-              if (e.key === "Enter") setIsOpen(true);
+              if (e.key === "Enter") setIsOpen(true)
             }}
           >
             <Image
-              src={project.image}
+              src={project.image || "/placeholder.svg"}
               alt={project.title}
               width={400}
               height={300}
@@ -120,13 +123,12 @@ export default function ProjectPage({ params }: { params: Promise<Params> }) {
             />
           </div>
         </FadeInUp>
+
         {/* texte */}
         <FadeInUp>
           <div className="flex flex-col text-center md:text-left">
             <p className="mb-2 text-xl">{project.description}</p>
-            <p className="mb-2 text-sm text-gray-400">
-              Langages utilisés : {project.tech.join(", ")}
-            </p>
+            <p className="mb-2 text-sm text-gray-400">Langages utilisés : {project.tech.join(", ")}</p>
             <p className="leading-relaxed text-xl">{project.content}</p>
           </div>
         </FadeInUp>
@@ -153,7 +155,7 @@ export default function ProjectPage({ params }: { params: Promise<Params> }) {
               ×
             </button>
             <Image
-              src={project.image}
+              src={project.image || "/placeholder.svg"}
               alt={project.title}
               width={1000}
               height={1500}
@@ -164,5 +166,5 @@ export default function ProjectPage({ params }: { params: Promise<Params> }) {
         </div>
       )}
     </div>
-  );
+  )
 }
