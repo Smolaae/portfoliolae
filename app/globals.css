@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
   --background: #ffffff;
@@ -13,6 +14,7 @@
   --smolae-gray-light: #374151;
   --smolae-light: #f6f2f7;
 }
+
 @layer utilities {
   .animate-fadeIn {
     animation: fadeIn 0.3s ease-out forwards;
@@ -31,45 +33,8 @@
 }
 
 
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
-  /* Ajout de vos couleurs personnalisées */
-  --color-smolae-green: var(--smolae-green);
-  --color-smolae-green-light: var(--smolae-green-light);
-  --color-smolae-green-dark: var(--smolae-green-dark);
-  --color-smolae-dark: var(--smolae-dark);
-  --color-smolae-gray: var(--smolae-gray);
-  --color-smolae-gray-light: var(--smolae-gray-light);
-  --color-smolae-light: var(--smolae-light);
-
-  /* Palette portfolio complète */
-  --color-portfolio-green-50: #f0fdf4;
-  --color-portfolio-green-100: #dcfce7;
-  --color-portfolio-green-200: #bbf7d0;
-  --color-portfolio-green-300: #86efac;
-  --color-portfolio-green-400: #4ade80;
-  --color-portfolio-green-500: #22c55e;
-  --color-portfolio-green-600: #16a34a;
-  --color-portfolio-green-700: #15803d;
-  --color-portfolio-green-800: #166534;
-  --color-portfolio-green-900: #14532d;
-
-  /* Couleurs sombres pour votre thème */
-  --color-portfolio-dark-50: #f8fafc;
-  --color-portfolio-dark-100: #f1f5f9;
-  --color-portfolio-dark-200: #e2e8f0;
-  --color-portfolio-dark-300: #cbd5e1;
-  --color-portfolio-dark-400: #94a3b8;
-  --color-portfolio-dark-500: #64748b;
-  --color-portfolio-dark-600: #475569;
-  --color-portfolio-dark-700: #334155;
-  --color-portfolio-dark-800: #1e293b;
-  --color-portfolio-dark-900: #0f172a;
+:root {
+  --font-roboto: "Roboto", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -148,3 +113,12 @@ body {
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
   }
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

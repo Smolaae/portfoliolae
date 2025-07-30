@@ -15,7 +15,8 @@ export default function Projects() {
       description: "Plateforme de gestion pour un jeu vidéo (FiveM)",
       tech: ["HTML", "Tailwind", "MongoDB"],
       image: "/yllusion2.png?height=200&width=400",
-      
+      internal: true,
+      link: undefined,
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export default function Projects() {
       description: "Site de partage de ressources pour apprendre le Lua",
       tech: ["HTML", "Tailwind", "JavaScript"],
       image: "/learninglua.png?height=300&width=400",
-      link : "https://learn.sayzx.fr/",
+      internal: true,
+      link: undefined,
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export default function Projects() {
       description: "Site vitrine pour une entreprise de peinture et rénovation",
       tech: ["Tailwind", "Html", "JavaScript"],
       image: "/ef.png?height=300&width=400",
-      link: "https://www.ef-peinture.fr/",
+      internal: true,
+      link: undefined,
     },
     {
       id: 4,
@@ -39,6 +42,8 @@ export default function Projects() {
       description: "Site vitrine pour une entreprise d'hébergement web et de services numériques",
       tech: ["Tailwind", "Php", "JavaScript", "MySQL"],
       image: "/host.png?height=300&width=400",
+      internal: true,
+      link: undefined,
     },
     {
       id: 5,
@@ -46,6 +51,8 @@ export default function Projects() {
       description: "Écran de chargement personnalisé pour un serveur FiveM",
       tech: ["Tailwind", "Lua"],
       image: "/loading.png?height=300&width=400",
+      internal: true,
+      link: undefined,
     },
     {
       id: 6,
@@ -53,6 +60,8 @@ export default function Projects() {
       description: "Interface utilisateur pour un système d'inventaire dans un serveur FiveM",
       tech: ["SCSS", "Lua"],
       image: "/inv.png?height=300&width=400",
+      internal: true,
+      link: undefined,
     },
   ]
 
@@ -67,29 +76,41 @@ export default function Projects() {
         {/* Grille de projets */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
-          <FadeInLeft key={project.id}>
-            <Link href={project.link || "#"} target="_blank" rel="noopener noreferrer" className="no-underline">
-              <div
-                className="bg-smolae-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+  <FadeInLeft key={project.id}>
+    <Link
+      href={project.internal ? `/projects/${project.id}` : project.link || "#"}
+      target={project.internal ? "_self" : "_blank"}
+      rel={project.internal ? undefined : "noopener noreferrer"}
+      className="no-underline"
+    >
+      <div className="bg-smolae-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+        <div className="relative h-48">
+          <Image
+            src={project.images?.[0] || project.image || "/placeholder.svg"}
+            alt={project.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+          <p className="text-gray-400 mb-4">{project.description}</p>
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-smolae-green-dark text-smolae-green-light text-sm rounded-full"
               >
-                <div className="relative h-48">
-                  <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-smolae-green-dark text-smolae-green-light text-sm rounded-full">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </FadeInLeft>
-        ))}
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Link>
+  </FadeInLeft>
+))}
+
       </div>
         </div>
          <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-stone-950 to-transparent pointer-events-none" />
