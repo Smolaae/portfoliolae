@@ -61,14 +61,16 @@ const projects = [
   },
 ]
 
+// ✅ Cette interface est OBLIGATOIRE
 interface PageProps {
   params: Promise<{ id: string }>
 }
 
+// ✅ Cette signature de fonction est OBLIGATOIRE
 export default function ProjectPage({ params }: PageProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  // Utilisation correcte de use() pour déballer la Promise
+  // ✅ Cette ligne est OBLIGATOIRE pour Next.js 15
   const { id } = use(params)
 
   // Debug params

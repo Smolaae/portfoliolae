@@ -14,16 +14,9 @@ export function useScrollAnimation() {
 }
 
 // Animation de fade-in depuis le bas
-export function FadeInUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const { ref, isInView } = useScrollAnimation()
-
+export const FadeInUp = ({ children }: { children: React.ReactNode }) => {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-    >
+    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
       {children}
     </motion.div>
   )
