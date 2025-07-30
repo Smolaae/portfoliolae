@@ -97,7 +97,7 @@ export default function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen px-18 py-10 text-white bg-stone-900">
+    <div className="min-h-screen px-18 py-10 text-white bg-emerald-950/30 backdrop-blur-sm">
       <FadeInUp>
         <h1 className="text-5xl font-bold mb-12 leading-relaxed">{project.title}</h1>
       </FadeInUp>
