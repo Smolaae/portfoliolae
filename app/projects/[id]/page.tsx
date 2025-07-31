@@ -7,7 +7,7 @@ import { FadeInUp } from "@/components/ScrollAnimations"
 const projects = [
   {
     id: 1,
-    title: "Plateforme jeu vidéo",
+    title: "YLLUSIONRP",
     description: "Plateforme de gestion pour un jeu vidéo (FiveM)",
     tech: ["HTML", "Tailwind", "MongoDB"],
     image: "/yllusion2.png",
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Learning Lua",
+    title: "LEARNING LUA",
     description: "Site de partage de ressources pour apprendre le Lua",
     tech: ["HTML", "Tailwind", "JavaScript"],
     image: "/learninglua.png",
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Entreprise de Peinture et Rénovation",
+    title: "EF PEINTURE",
     description: "Site vitrine pour une entreprise de peinture et rénovation",
     tech: ["Tailwind", "Html", "JavaScript"],
     image: "/efpeinture.png",
@@ -34,7 +34,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Site d'Hébergement",
+    title: "FULLPAGEHOST",
     description: "Site vitrine pour une entreprise d'hébergement web et de services numériques",
     tech: ["Tailwind", "Php", "JavaScript", "MySQL"],
     image: "/fullpagehost.png",
@@ -43,7 +43,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "Loading Screen pour FiveM",
+    title: "LOADING SCREEN",
     description: "Écran de chargement personnalisé pour un serveur FiveM",
     tech: ["Tailwind", "Lua"],
     image: "/loading.png",
@@ -52,7 +52,7 @@ const projects = [
   },
   {
     id: 6,
-    title: "UI inventaire pour FiveM",
+    title: "UI INVENTAIRE",
     description: "Interface utilisateur pour un système d'inventaire dans un serveur FiveM",
     tech: ["SCSS", "Lua"],
     image: "/inv.png",
@@ -99,7 +99,7 @@ export default function ProjectPage({ params }: PageProps) {
   return (
     <div className="min-h-screen px-18 py-10 text-white bg-emerald-950/30 backdrop-blur-sm">
       <FadeInUp>
-        <h1 className="text-5xl font-bold mb-12 leading-relaxed">{project.title}</h1>
+        <h1 className="text-4xl font-bold mb-12 leading-relaxed">{project.title}</h1>
       </FadeInUp>
 
       <div className="flex flex-col md:flex-row items-center gap-8">
