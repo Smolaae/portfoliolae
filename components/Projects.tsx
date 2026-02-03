@@ -64,7 +64,7 @@ export default function Projects() {
   ]
 
   return (
-    <div className="min-h-screen bg-emerald-950/30 backdrop-blur-sm text-white">
+    <div className="min-h-screen text-white">
       {/* Contenu principal */}
       <div className="pt-24 px-8 pb-10 max-w-6xl mx-auto">
         <FadeInUp>
@@ -81,7 +81,7 @@ export default function Projects() {
                 rel={project.internal ? undefined : "noopener noreferrer"}
                 className="no-underline"
               >
-                <div className="bg-smolae-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-smolae-dark rounded-lg overflow-hidden &&azzzz:transform hover:scale-105 transition-all duration-300">
                   <div className="relative h-48">
                     <Image
                       src={project.image || "/placeholder.svg"}

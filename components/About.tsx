@@ -19,10 +19,25 @@ export default function About() {
 
           <div className="space-y-6 text-gray-300 leading-relaxed">
             <p>
-              Je m'appelle Laetitia, aussi connue sous le nom de Lae ou Smolae, fondatrice de mon entreprise 'Smolae' où je combine deux passions : le développement web et l’assistanat administratif.</p>
+              Je m'appelle Laetitia, aussi connue sous le nom de Lae ou Smolae, fondatrice de mon entreprise 'Smolae'.</p>
 
             <p>
-             Diplômée en tant que Lead Développeuse Web, j’ai acquis de l’expérience à travers divers projets techniques et missions freelance. En parallèle, j’ai également développé mes compétences en gestion administrative, ce qui me permet d’apporter rigueur, organisation et polyvalence à chaque collaboration. J’aime autant coder une interface qu’organiser un planning ou gérer des dossiers — deux mondes différents, mais complémentaires, dans lesquels je m’épanouis pleinement.</p>
+            Développeuse front-end freelance, je conçois et intègre des interfaces web modernes, claires et accessibles pour les indépendants, startups et petites entreprises.</p>
+
+<p> J’interviens sur des projets de création, refonte ou amélioration de sites et applications web, avec une attention particulière portée à l’expérience utilisateur, à la cohérence visuelle et à la performance.</p>
+
+<p> Ce que je peux vous apporter :
+• Intégration de maquettes (HTML, CSS, Tailwind CSS)
+• Développement front-end en JavaScript / React
+• Refonte et optimisation d’interfaces existantes
+• Amélioration de l’ergonomie et de la lisibilité
+</p>
+<p>
+J’accorde une grande importance à la communication, à la compréhension des besoins et au respect des délais, afin de proposer des solutions simples, efficaces et adaptées à chaque projet.
+
+Technologies principales : HTML, CSS, Tailwind CSS, JavaScript, React.
+
+Disponible pour des missions ponctuelles ou des collaborations plus longues.</p>
 
           </div>
           </FadeInLeft>

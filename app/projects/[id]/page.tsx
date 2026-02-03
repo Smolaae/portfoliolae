@@ -57,7 +57,7 @@ const projects = [
     tech: ["SCSS", "Lua"],
     image: "/inv.png",
     content:
-      "Une interface utilisateur développée pour gérer l'inventaire dans un serveur FiveM, offrant une expérience utilisateur fluide et intuitive. Le design à été imaginé pour un serveur sur le theme futuriste avec des ton rouge, rose et bleu. le code est 100% en scss et lua.",
+      "Une interface utilisateur développée pour gérer l'inventaire dans un serveur FiveM, offrant une expérience utilisateur fluide et intuitive. Le design a été imaginé pour un serveur sur le thème futuriste avec des tons rouge, rose et bleu. Le code est 100% en scss et lua.",
   },
 ]
 
@@ -66,7 +66,7 @@ interface PageProps {
   params: Promise<{ id: string }>
 }
 
-// ✅ Cette signature de fonction est OBLIGATOIRE
+// ✅   signature de fonction est OBLIGATOIRE
 export default function ProjectPage({ params }: PageProps) {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -124,14 +124,14 @@ export default function ProjectPage({ params }: PageProps) {
               priority
             />
           </div>
-        </FadeInUp>
+        </FadeInUp> 
 
         {/* texte */}
         <FadeInUp>
-          <div className="flex flex-col text-center md:text-left">
-            <p className="mb-2 text-xl">{project.description}</p>
-            <p className="mb-2 text-sm text-gray-400">Langages utilisés : {project.tech.join(", ")}</p>
-            <p className="leading-relaxed text-xl">{project.content}</p>
+          <div className="flex flex-col text-center px-10 md:text-left">
+            <p className="mb-2 text-xl font-semibold">{project.description}</p>
+            <p className="mb-2 text-sm text-neutral-500">Langages utilisés : {project.tech.join(", ")}</p>
+            <p className="leading-relaxed text-base">{project.content}</p>
           </div>
         </FadeInUp>
       </div>
