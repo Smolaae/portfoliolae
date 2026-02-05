@@ -55,7 +55,7 @@ const Hero = () => {
         <div className="absolute left-12 top-1/2 transform -translate-y-1/2 z-20 flex flex-col items-center">
             <div className="w-px h-32 bg-green-100 opacity-70"></div>
             <div className="-rotate-90 mt-8">
-                <p className="text-xl text-white font-light tracking-widest">2025</p>
+                <p className="text-xl text-white font-light tracking-widest">2026</p>
             </div>
         </div>
      
