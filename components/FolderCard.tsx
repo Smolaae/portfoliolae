@@ -1,4 +1,3 @@
-// app/components/FolderCard.tsx
 'use client';
 
 interface FolderCardProps {

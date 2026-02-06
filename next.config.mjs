@@ -4,9 +4,6 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // !! ATTENTION !!
-    // Désactive temporairement la vérification TypeScript au build
-    // À utiliser seulement pour déboguer
     ignoreBuildErrors: true,
   },
   images: {

@@ -70,19 +70,14 @@ const projects = [
   },
 ]
 
-// ✅ Cette interface est OBLIGATOIRE
 interface PageProps {
   params: Promise<{ id: string }>
 }
 
-// ✅   signature de fonction est OBLIGATOIRE
 export default function ProjectPage({ params }: PageProps) {
   const [isOpen, setIsOpen] = useState(false)
-
-  // ✅ Cette ligne est OBLIGATOIRE pour Next.js 15
   const { id } = use(params)
 
-  // Debug params
   console.log("params.id =", id)
 
   const projectId = Number(id)
@@ -135,7 +130,6 @@ export default function ProjectPage({ params }: PageProps) {
           </div>
         </FadeInUp> 
 
-        {/* texte */}
         <FadeInUp>
           <div className="flex flex-col text-center px-10 md:text-left">
             <p className="mb-2 text-2xl font-sans font-semibold">{project.description}</p>
@@ -145,7 +139,6 @@ export default function ProjectPage({ params }: PageProps) {
         </FadeInUp>
       </div>
 
-      {/* Modale d'image complète */}
       {isOpen && (
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex justify-center items-start p-6 overflow-auto"

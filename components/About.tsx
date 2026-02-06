@@ -9,9 +9,6 @@ import {
 export default function About() {
   return (
     <div className="min-h-screen bg-stone-950 text-white">
-      
-
-      {/* Main Content */}
       <div className="flex min-h-screen items-center justify-center px-8">
         <div className="max-w-4xl">
           <FadeInLeft>
@@ -24,26 +21,23 @@ export default function About() {
             <p>
             Développeuse front-end freelance, je conçois et intègre des interfaces web modernes, claires et accessibles pour les indépendants, startups et petites entreprises.</p>
 
-<p> J’interviens sur des projets de création, refonte ou amélioration de sites et applications web, avec une attention particulière portée à l’expérience utilisateur, à la cohérence visuelle et à la performance.</p>
+            <p> J’interviens sur des projets de création, refonte ou amélioration de sites et applications web, avec une attention particulière portée à l’expérience utilisateur, à la cohérence visuelle et à la performance.</p>
 
-<p> Ce que je peux vous apporter :
-• Intégration de maquettes (HTML, CSS, Tailwind CSS)
-• Développement front-end en JavaScript / React
-• Refonte et optimisation d’interfaces existantes
-• Amélioration de l’ergonomie et de la lisibilité
-</p>
-<p>
-J’accorde une grande importance à la communication, à la compréhension des besoins et au respect des délais, afin de proposer des solutions simples, efficaces et adaptées à chaque projet.
+            <p> Ce que je peux vous apporter :
+            • Intégration de maquettes (HTML, CSS, Tailwind CSS)
+            • Développement front-end en JavaScript / React
+            • Refonte et optimisation d’interfaces existantes
+            • Amélioration de l’ergonomie et de la lisibilité
+            </p>
+            <p>
+            J’accorde une grande importance à la communication, à la compréhension des besoins et au respect des délais, afin de proposer des solutions simples, efficaces et adaptées à chaque projet.
 
-Technologies principales : HTML, CSS, Tailwind CSS, JavaScript, React.
+            Technologies principales : HTML, CSS, Tailwind CSS, JavaScript, React.
 
-Disponible pour des missions ponctuelles ou des collaborations plus longues.</p>
+            Disponible pour des missions ponctuelles ou des collaborations plus longues.</p>
 
           </div>
           </FadeInLeft>
-
-          {/* Image Section */}
-          {/* Skills or additional info could go here */}
           <FadeInRight>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>

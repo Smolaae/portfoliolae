@@ -5,7 +5,6 @@ import type React from "react"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
 
-// Hook personnalisé pour détecter si un élément est visible
 export function useScrollAnimation() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
@@ -13,7 +12,6 @@ export function useScrollAnimation() {
   return { ref, isInView }
 }
 
-// Animation de fade-in depuis le bas
 export function FadeInUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -29,7 +27,6 @@ export function FadeInUp({ children, delay = 0 }: { children: React.ReactNode; d
   )
 }
 
-// Animation de fade-in depuis la gauche
 export function FadeInLeft({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -45,7 +42,6 @@ export function FadeInLeft({ children, delay = 0 }: { children: React.ReactNode;
   )
 }
 
-// Animation de fade-in depuis la droite
 export function FadeInRight({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -61,7 +57,6 @@ export function FadeInRight({ children, delay = 0 }: { children: React.ReactNode
   )
 }
 
-// Animation de scale (zoom)
 export function ScaleIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -77,7 +72,6 @@ export function ScaleIn({ children, delay = 0 }: { children: React.ReactNode; de
   )
 }
 
-// Animation de rotation
 export function RotateIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -93,7 +87,6 @@ export function RotateIn({ children, delay = 0 }: { children: React.ReactNode; d
   )
 }
 
-// Animation de texte qui apparaît lettre par lettre
 export function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   const { ref, isInView } = useScrollAnimation()
   const [displayedText, setDisplayedText] = useState("")
@@ -143,7 +136,6 @@ export function ParallaxSection({ children, speed = 0.5 }: { children: React.Rea
   )
 }
 
-// Animation de progression de scroll
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll()
 
@@ -155,7 +147,6 @@ export function ScrollProgress() {
   )
 }
 
-// Animation de compteur
 export function CounterAnimation({ target, duration = 2 }: { target: number; duration?: number }) {
   const { ref, isInView } = useScrollAnimation()
   const [count, setCount] = useState(0)
