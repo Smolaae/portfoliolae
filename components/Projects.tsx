@@ -9,21 +9,22 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Portfolio Mannequin",
+      description: "Portfolio pour un mannequin professionnel",
+      tech: ["Tailwind", "Next.js", "JavaScript"],
+      image: "/mannequin.png?height=300&width=400",
+      internal: true,
+      link: undefined,
+    },
+    {
+      id: 2,
       title: "Plateforme jeu vidéo",
       description: "Plateforme de gestion pour un jeu vidéo (FiveM)",
       tech: ["HTML", "Tailwind", "MongoDB"],
       image: "/yllusion2.png?height=200&width=400",
       internal: true,
       link: undefined,
-    },
-    {
-      id: 2,
-      title: "Learning Lua",
-      description: "Site de partage de ressources pour apprendre le Lua",
-      tech: ["HTML", "Tailwind", "JavaScript"],
-      image: "/learninglua.png?height=300&width=400",
-      internal: true,
-      link: undefined,
+      
     },
     {
       id: 3,
@@ -36,6 +37,15 @@ export default function Projects() {
     },
     {
       id: 4,
+      title: "Learning Lua",
+      description: "Site de partage de ressources pour apprendre le Lua",
+      tech: ["HTML", "Tailwind", "JavaScript"],
+      image: "/learninglua.png?height=300&width=400",
+      internal: true,
+      link: undefined,
+      },
+    {
+      id: 5,
       title: "Site d'Hébergement",
       description: "Site vitrine pour une entreprise d'hébergement web et de services numériques",
       tech: ["Tailwind", "Php", "JavaScript", "MySQL"],
@@ -43,15 +53,7 @@ export default function Projects() {
       internal: true,
       link: undefined,
     },
-    {
-      id: 5,
-      title: "Loading Screen pour FiveM",
-      description: "Écran de chargement personnalisé pour un serveur FiveM",
-      tech: ["Tailwind", "Lua"],
-      image: "/loading.png?height=300&width=400",
-      internal: true,
-      link: undefined,
-    },
+      
     {
       id: 6,
       title: "UI inventaire pour FiveM",
@@ -61,6 +63,15 @@ export default function Projects() {
       internal: true,
       link: undefined,
     },
+    {
+      id: 7,
+      title: "Loading Screen pour FiveM",
+      description: "Écran de chargement personnalisé pour un serveur FiveM",
+      tech: ["Tailwind", "Lua"],
+      image: "/loading.png?height=300&width=400",
+      internal: true,
+      link: undefined,
+    }
   ]
 
   return (

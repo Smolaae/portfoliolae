@@ -11,6 +11,7 @@ import {
   CounterAnimation,
 } from "./ScrollAnimations"
 
+import { div } from "framer-motion/m";
 
 
 export default function Contact() {
@@ -56,14 +57,19 @@ export default function Contact() {
               <a href="https://www.linkedin.com/in/laetitiadoss/" className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-emerald-950/30 to-transparent pointer-events-none" />
-     
+              <a href="https://www.malt.fr/profile/laetitiadossantos1"
+              className="p-3 bg-gray-800 rounded-full hover:bg-green-900 transition-colors flex items-center justify-center"
+              >
+                <img
+                  src="/malt.png"
+                  alt="Malt"
+                  className="w-5 h-5"
+                />
+              </a>
             </div>
           </div>
         </div>
-        
       </div>
-      
     </div>
   )
 }
