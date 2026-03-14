@@ -16,7 +16,7 @@ const Hero = () => {
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-emerald-950/30 to-stone-950/30 ">
 
     
---
+
       <div className="absolute inset-0  z-10"></div>
 
       <nav className="absolute top-0 left-0 right-0 z-30 p-6">
