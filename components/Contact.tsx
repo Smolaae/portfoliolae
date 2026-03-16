@@ -35,7 +35,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5 text-green-200" />
-                  <span>dev@smolae.fr</span>
+                  <span>laedev@smolae.fr</span>
                 </div>
                 
                 <div className="flex items-center gap-4">
